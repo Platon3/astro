@@ -22,7 +22,7 @@ return {
        desc = "Previous buffer",
      },
     ["<leader>bdf"] = {"<cmd>tabnew<cr>", desc = "New tab"},
-    ["<leader>bd"] = {"<cmd>bd!<cr>", desc = "Closes the buffer without saving changes"},
+    ["<leader>bdz"] = {"<cmd>bd!<cr>", desc = "Closes the buffer without saving changes"},
 
     -- mappings seen under group name "Buffer"
     ["<leader>bD"] = {

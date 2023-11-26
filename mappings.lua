@@ -17,9 +17,12 @@ return {
        function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
        desc = "Previous buffer",
      },
-    {
-    vim.keymap.set('n','<leader>bd',':bd!<cr>' )
-    },
+    ["<leader>bdf"] = {"<cmd>tabnew<cr>", desc = "New tab"},
+    ["<leader>bd"] = {"<cmd>bd!<cr>", desc = "Closes the buffer without saving changes"},
+    [">"]={"<cmd>>gv<cr>",desc = "After tab in re-select the some"},
+    ["<"]={"<gv", desc ="After tab out re-select the same"},
+    ["n"]={"nzzzv", desc ="Goes ta the next result on the seach and plut the cursor in the midole"},
+    ["N"]={"Nzzzv",desc="Goes to the prev result on the seach and put the cursor in the middle"},
     
 
     -- mappings seen under group name "Buffer"

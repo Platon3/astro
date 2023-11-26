@@ -17,5 +17,6 @@ return {
     --end,
     opts ={},
     event = "User AstroFile",
+    cmd = { "TodoQUickFIx"},
   },
 }

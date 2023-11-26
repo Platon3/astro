@@ -17,8 +17,9 @@ return {
        function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
        desc = "Previous buffer",
      },
+    {
     vim.keymap.set('n','<leader>bd',':bd<cr>' )
-    
+    },
     
 
     -- mappings seen under group name "Buffer"

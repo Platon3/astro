@@ -15,7 +15,7 @@ return {
       },
     [">"]={"<cmd>>gv<cr>",desc = "After tab in re-select the some"},
     ["<"]={"<gv", desc ="After tab out re-select the same"},
-    ["n"]={"nzzzv", desc ="Goes ta the next result on the seach and plut the cursor in the midole"},
+    ["n"]={"nzzzv", desc ="Goes ta the next result on the seach and plut the cursor in the middle"},
     ["N"]={"Nzzzv",desc="Goes to the prev result on the seach and put the cursor in the middle"},
      H = {
        function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,

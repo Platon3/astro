@@ -18,7 +18,7 @@ return {
        desc = "Previous buffer",
      },
     {
-    vim.keymap.set('n','<leader>bd',':bd<cr>' )
+    vim.keymap.set('n','<leader>bd',':bd!<cr>' )
     },
     
 

@@ -25,6 +25,8 @@ return {
         -- "prettier",
         -- "stylua",
           "php-cs-fixer",
+          "stylua",
+          "luacheck",
           
       })
     end,

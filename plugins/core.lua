@@ -74,4 +74,9 @@ return {
   --     }, { mode = "n", prefix = "<leader>" })
   --   end,
   -- },
+    {
+    "williamboman/mason-lspconfig.nvim",
+    opts = {
+      ensure_installed = { "jdtls", "clangd" },
+    },
 }

@@ -10,6 +10,7 @@ return {
         -- "lua_ls",
          "angularls", 
           "phpactor",
+          "lua-ls",
           
       })
     end,

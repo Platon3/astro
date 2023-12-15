@@ -74,45 +74,61 @@ return {
   --     }, { mode = "n", prefix = "<leader>" })
   --   end,
   -- },
--- TODO: add overwrite for on_attach
+{
+    "hrsh7th/nvim-cmp",
+    dependencies = { "zbirenbaum/copilot.lua" },
+    opts = function(_, opts)
+      local cmp, copilot = require "cmp", require "copilot.suggestion"
+      local snip_status_ok, luasnip = pcall(require, "luasnip")
+      if not snip_status_ok then return end
+      local function has_words_before()
+        local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+        return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match "%s" == nil
+      end
+      if not opts.mapping then opts.mapping = {} end
+      opts.mapping["<Tab>"] = cmp.mapping(function(fallback)
+        if copilot.is_visible() then
+          copilot.accept()
+        elseif cmp.visible() then
+          cmp.select_next_item()
+        elseif luasnip.expand_or_jumpable() then
+          luasnip.expand_or_jump()
+        elseif has_words_before() then
+          cmp.complete()
+        else
+          fallback()
+        end
+      end, { "i", "s" })
 
-      -- ensure that table is valid
-      if not opts then opts = {} end
+      opts.mapping["<C-x>"] = cmp.mapping(function()
+        if copilot.is_visible() then copilot.next() end
+      end)
 
-      -- extend the current table with the defaults keeping options in the user opts
-      -- this allows users to pass opts through an opts table in community.lua
-      opts = vim.tbl_deep_extend("keep", opts, defaults)
+      opts.mapping["<C-z>"] = cmp.mapping(function()
+        if copilot.is_visible() then copilot.prev() end
+      end)
 
-      -- send opts to config
+      opts.mapping["<C-right>"] = cmp.mapping(function()
+        if copilot.is_visible() then copilot.accept_word() end
+      end)
+
+      opts.mapping["<C-l>"] = cmp.mapping(function()
+        if copilot.is_visible() then copilot.accept_word() end
+      end)
+
+      opts.mapping["<C-down>"] = cmp.mapping(function()
+        if copilot.is_visible() then copilot.accept_line() end
+      end)
+
+      opts.mapping["<C-j>"] = cmp.mapping(function()
+        if copilot.is_visible() then copilot.accept_line() end
+      end)
+
+      opts.mapping["<C-c>"] = cmp.mapping(function()
+        if copilot.is_visible() then copilot.dismiss() end
+      end)
+
       return opts
-    end,
-    config = function(_, opts)
-      -- setup autocmd on filetype detect java
-      vim.api.nvim_create_autocmd("Filetype", {
-        pattern = "java", -- autocmd to start jdtls
-        callback = function()
-          if opts.root_dir and opts.root_dir ~= "" then
-            require("jdtls").start_or_attach(opts)
-            -- require('jdtls.dap').setup_dap_main_class_configs()
-          else
-            require("astronvim.utils").notify(
-              "jdtls: root_dir not found. Please specify a root marker",
-              vim.log.levels.ERROR
-            )
-          end
-        end,
-      })
-      -- create autocmd to load main class configs on LspAttach.
-      -- This ensures that the LSP is fully attached.
-      -- See https://github.com/mfussenegger/nvim-jdtls#nvim-dap-configuration
-      vim.api.nvim_create_autocmd("LspAttach", {
-        pattern = "*.java",
-        callback = function(args)
-          local client = vim.lsp.get_client_by_id(args.data.client_id)
-          -- ensure that only the jdtls client is activated
-          if client.name == "jdtls" then require("jdtls.dap").setup_dap_main_class_configs() end
-        end,
-      })
     end,
   },
    

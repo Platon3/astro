@@ -79,6 +79,7 @@ return {
     opts = {
       ensure_installed = { "jdtls", "clangd" },
     },
+  },
     { "willothy/flatten.nvim", opts = {}, lazy = false, priority = 1001 },
    
 }

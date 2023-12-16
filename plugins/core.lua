@@ -74,6 +74,6 @@ return {
   --     }, { mode = "n", prefix = "<leader>" })
   --   end,
   -- },
- { "mfussenegger/nvim-jdtls", enabled = false },
+ 
    
 }

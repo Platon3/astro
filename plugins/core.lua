@@ -74,23 +74,6 @@ return {
   --     }, { mode = "n", prefix = "<leader>" })
   --   end,
   -- },
-  {
-    "mfussenegger/nvim-jdtls",
-    opts = {
-      settings = {
-        java = {
-          configuration = {
-            runtimes = {
-              {
-                name = "JavaSE-11",
-                path = "/usr/lib/jvm/java-11-openjdk/",
-              },
-            },
-          },
-        },
-      },
-    },
-  },
-
+ { "mfussenegger/nvim-jdtls", enabled = false },
    
 }

@@ -8,6 +8,7 @@ return {
   -- lsp
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.html-css" },
+  { import = "astrocommunity.pack.lua" },
   -- git
   { import = "astrocommunity.git.neogit" },
   

@@ -9,6 +9,7 @@ return {
      require("lsp_signature").setup()
      end,
    },
+  {'akinsho/toggleterm.nvim', version = "*", config = true},
 
    
 }

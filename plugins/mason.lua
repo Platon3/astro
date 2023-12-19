@@ -10,7 +10,7 @@ return {
         -- "lua_ls",
          "angularls",
          "jdtls", 
-          "clangd",
+          "lemminx",
           
           
           

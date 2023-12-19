@@ -1,8 +1,14 @@
 return 
 {
-
-{"mfussenegger/nvim-jdtls", enabled=true} -- load jdtls on module
-    
+{
+ "mfussenegger/nvim-jdtls", -- load jdtls on module
+    {
+      "williamboman/mason-lspconfig.nvim",
+      opts = {
+        ensure_installed = { "jdtls" },
+      },
+    },
+    },
 
   
 }

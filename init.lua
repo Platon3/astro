@@ -53,6 +53,7 @@ return {
       -- "pyright"
     },
   },
+ 
 
   -- Configure require("lazy").setup() options
   lazy = {

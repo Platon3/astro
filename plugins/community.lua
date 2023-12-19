@@ -11,6 +11,13 @@ return {
   { import = "astrocommunity.pack.lua" },
   -- git
   { import = "astrocommunity.git.neogit" },
+   -- editor plugins
+  { import = "astrocommunity.editing-support.zen-mode-nvim" } ,
+  -- git
+  { import = "astrocommunity.git.neogit" },
+  -- markdown & latext
+  { import = "astrocommunity.markdown-and-latex.vimtex" },
+  { import = "astrocommunity.markdown-and-latex.markdown-preview-nvim" },
   
 
    

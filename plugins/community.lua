@@ -8,7 +8,7 @@ return {
   -- lsp
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.html-css" },
-  { import = "astrocommunity.pack.rust" },
+  
   
   
   -- git
@@ -18,9 +18,7 @@ return {
   -- git
   { import = "astrocommunity.git.neogit" },
   -- markdown & latext
-  { import = "astrocommunity.markdown-and-latex.vimtex" },
-  { import = "astrocommunity.markdown-and-latex.markdown-preview-nvim" },
-  
+ 
 
    
 

@@ -1,6 +1,4 @@
-return 
-{
-  function()
+return function()
         -- use this function notation to build some variables
         local root_markers = { ".git", "mvnw", "gradlew", "pom.xml", "build.gradle" }
         local root_dir = require("jdtls.setup").find_root(root_markers)
@@ -48,5 +46,5 @@ return
           },
           root_dir = root_dir,
         }
-      end,
-}
+      end
+

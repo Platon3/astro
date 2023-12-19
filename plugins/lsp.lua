@@ -109,5 +109,6 @@ return
           require("jdtls").setup_dap { hotcodereplace = "auto" }
           require("astronvim.utils.lsp").on_attach(client, bufnr)
         end,
+  },
     
 }

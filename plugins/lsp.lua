@@ -1,7 +1,7 @@
 return 
 {
 
-{"mfussenegger/nvim-jdtls", enabled=false} -- load jdtls on module
+{"mfussenegger/nvim-jdtls", enabled=true} -- load jdtls on module
     
 
   

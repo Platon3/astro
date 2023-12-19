@@ -65,6 +65,7 @@ return {
       },
     },
   },
+  {
   dap.configurations.python = {
               {
                 type = "python",
@@ -72,9 +73,10 @@ return {
                 name = "Launch file",
                 program = "${file}", -- This configuration will launch the current file if used.
               },
-            },
+            }
+          end,
         
-      
+},
     
   
   

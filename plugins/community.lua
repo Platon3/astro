@@ -9,6 +9,7 @@ return {
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.html-css" },
   { import = "astrocommunity.pack.lua" },
+  { import = "astrocommunity.pack.java" },
   -- git
   { import = "astrocommunity.git.neogit" },
    -- editor plugins

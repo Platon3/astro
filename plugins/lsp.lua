@@ -1,6 +1,6 @@
 return 
 {
- {"mfussenegger/nvim-jdtls",enables=false}, 
+ {"mfussenegger/nvim-jdtls",enable=false}, 
  {
    "p00f/clangd_extensions.nvim", -- install lsp plugin
       init = function()
